@@ -230,6 +230,7 @@
         "price": 39.99,
         "rating": 4.8,
         "available_quantity": 4,
+        "created_by": "a@toy.com",
         "description": "Embark on a journey around the world with this interactive globe. Learn about continents, countries, and cultures through fun games, quizzes, and augmented reality experiences."
     }
 ]
