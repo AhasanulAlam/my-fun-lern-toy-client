@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaBattleNet } from 'react-icons/fa';
 
 
 const NavBar = () => {
     const navItems = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/allToys">All Toys</Link></li>
-        <li><Link to="/myToys">My Toys</Link></li>
-        <li><Link to="/addAToy">Add A Toys</Link></li>
-        <li><Link to="/blogs">Blogs</Link></li>
+        <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'default')}>Home</NavLink></li>
+        <li><NavLink to="/allToys" className={({ isActive }) => (isActive ? 'active' : 'default')}>All Toys</NavLink></li>
+        <li><NavLink to="/myToys" className={({ isActive }) => (isActive ? 'active' : 'default')}>My Toys</NavLink></li>
+        <li><NavLink to="/addAToy" className={({ isActive }) => (isActive ? 'active' : 'default')}>Add A Toys</NavLink></li>
+        <li><NavLink to="/blogs" className={({ isActive }) => (isActive ? 'active' : 'default')}>Blogs</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 h-28 mb-4">

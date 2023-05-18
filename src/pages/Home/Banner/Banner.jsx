@@ -3,11 +3,11 @@ import gamingBannerPuzzle from '../../../assets/48441-puzzzle.json';
 
 const Banner = () => {
     return (
-        <div className="flex">
-            <div className="carousel w-1/2">
+        <div className="flex flex-col md:flex-row">
+            <div className="carousel md:w-1/2 rounded-2xl">
                 <Lottie animationData={gamingBannerPuzzle} loop={true} />
             </div>
-            <div className="carousel w-1/2">
+            <div className="carousel md:w-1/2 rounded-2xl">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://plus.unsplash.com/premium_photo-1663089920014-4ff29cd209f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=888&q=80" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
