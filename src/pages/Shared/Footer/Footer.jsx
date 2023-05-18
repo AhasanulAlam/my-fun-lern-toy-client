@@ -6,10 +6,12 @@ const Footer = () => {
     return (
         <footer className="footer p-10 bg-base-200 text-base-content">
             <div>
-                <p className="flex items-center">
-                    <span><FaBattleNet className="text-3xl text-orange-500"></FaBattleNet> </span>
-                    <span> <span className="text-orange-400 text-3xl">F</span>un<span className="text-orange-400 text-3xl">L</span>earn<span className="text-orange-400 text-3xl">T</span>oy</span>
-                </p>
+                <Link to="/">
+                    <p className="flex items-center">
+                        <span><FaBattleNet className="text-3xl text-orange-500"></FaBattleNet> </span>
+                        <span> <span className="text-orange-400 text-3xl">F</span>un<span className="text-orange-400 text-3xl">L</span>earn<span className="text-orange-400 text-3xl">T</span>oy</span>
+                    </p>
+                </Link>
                 <p>Fun Learn Toy<br />Providing educational toy since 1992</p>
                 <p>Copyright © 2023 - All right reserved by Fun Learn Toy</p>
             </div>
