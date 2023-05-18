@@ -6,23 +6,23 @@ const ShopByCategory = () => {
     const [tabIndex, setTabIndex] = useState(0);
 
     return (
-        <div className='mt-16 mb-16'>
+        <div className='mt-16 mb-32'>
             <h2 className="text-3xl text-center font-bold text-orange-500 mb-8">Shop By Category</h2>
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                <TabList>
-                    <Tab>Title 1</Tab>
-                    <Tab>Title 2</Tab>
-                    <Tab>Title 3</Tab>
+                <TabList className="text-3xl text-center font-semibold text-gray-400">
+                    <Tab>Science Toys</Tab>
+                    <Tab>Math Toys</Tab>
+                    <Tab>Language Toys</Tab>
                 </TabList>
 
                 <TabPanel>
-                    <h2>Any content 1</h2>
+                    <h2>Any content of Science Toys</h2>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <h2>Any content of Math Toys</h2>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 3</h2>
+                    <h2>Any content of Language Toys</h2>
                 </TabPanel>
             </Tabs>
 

@@ -5,9 +5,9 @@ import { FaBattleNet } from 'react-icons/fa';
 const NavBar = () => {
     const navItems = <>
         <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'default')}>Home</NavLink></li>
-        <li><NavLink to="/allToys" className={({ isActive }) => (isActive ? 'active' : 'default')}>All Toys</NavLink></li>
-        <li><NavLink to="/myToys" className={({ isActive }) => (isActive ? 'active' : 'default')}>My Toys</NavLink></li>
-        <li><NavLink to="/addAToy" className={({ isActive }) => (isActive ? 'active' : 'default')}>Add A Toys</NavLink></li>
+        <li><NavLink to="/alltoys" className={({ isActive }) => (isActive ? 'active' : 'default')}>All Toys</NavLink></li>
+        <li><NavLink to="/mytoys" className={({ isActive }) => (isActive ? 'active' : 'default')}>My Toys</NavLink></li>
+        <li><NavLink to="/addToy" className={({ isActive }) => (isActive ? 'active' : 'default')}>Add A Toys</NavLink></li>
         <li><NavLink to="/blogs" className={({ isActive }) => (isActive ? 'active' : 'default')}>Blogs</NavLink></li>
     </>
     return (

@@ -4,7 +4,7 @@ import gamingBannerPuzzle from '../../../assets/48441-puzzzle.json';
 const Banner = () => {
     return (
         <div className="flex flex-col md:flex-row h-[500px] mb-28">
-            <div className="carousel md:w-1/2 rounded-2xl">
+            <div className="carousel md:w-1/2 rounded-2xl bg-red-200">
                 <Lottie animationData={gamingBannerPuzzle} loop={true} />
             </div>
             <div className="carousel md:w-1/2 rounded-2xl">
