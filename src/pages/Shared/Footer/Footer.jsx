@@ -38,7 +38,7 @@ const Footer = () => {
             <div>
                 <span className="footer-title">Social</span>
                 <div className="grid grid-flow-col gap-4">
-                    <Link><FaGoogle className="text-yellow-300 text-xl"></FaGoogle></Link>
+                    <Link><FaGoogle className="text-green-500 text-xl"></FaGoogle></Link>
                     <Link><FaYoutube className="text-red-600 text-xl"></FaYoutube></Link>
                     <Link><FaFacebook className="text-blue-500 text-xl"></FaFacebook></Link>
                 </div>
