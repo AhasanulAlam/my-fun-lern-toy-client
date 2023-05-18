@@ -25,7 +25,6 @@ const ShopByCategory = () => {
                     <h2>Any content of Language Toys</h2>
                 </TabPanel>
             </Tabs>
-
         </div>
     );
 };
