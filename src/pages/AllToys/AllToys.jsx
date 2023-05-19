@@ -11,7 +11,7 @@ const AllToys = () => {
     }, []);
 
     return (
-        <div>
+        <div className="mb-12">
             <div className="text-center text-3xl mb-12">
                 <form >
                     <input type="text" name="search-item" id="search-item" placeholder="search by name.."  className="input input-bordered input-warning w-full max-w-xs" />
