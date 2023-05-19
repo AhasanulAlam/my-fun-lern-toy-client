@@ -26,7 +26,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                navigate(from);
+                navigate(from, { replace: true });
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -45,7 +45,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                navigate(from);
+                navigate(from, { replace: true });
                 Swal.fire({
                     position: 'center',
                     icon: 'success',

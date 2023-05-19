@@ -1,11 +1,14 @@
 import { FaBattleNet, FaGg, FaHubspot } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const HowToBuy = () => {
     return (
         <div className="">
             <h2 className="text-3xl text-center font-bold text-orange-500 mb-8">How to Buy?</h2>
             <div className="flex flex-col justify-between md:flex-row gap-4">
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div data-aos="fade-down-right" className="card w-96 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <FaBattleNet className="text-blue-400 text-8xl"></FaBattleNet>
                     </figure>
@@ -14,7 +17,7 @@ const HowToBuy = () => {
                         <p>Pick from over 1,000 of the latest must haves.</p>
                     </div>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div  data-aos="flip-left" className="card w-96 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <FaHubspot className="text-green-400 text-8xl"></FaHubspot>
                     </figure>
@@ -23,7 +26,7 @@ const HowToBuy = () => {
                         <p>Kid-led discovery that builds confidence & sports imagination.</p>
                     </div>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div data-aos="fade-down-left" className="card w-96 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <FaGg className="text-orange-600 text-8xl"></FaGg>
                     </figure>

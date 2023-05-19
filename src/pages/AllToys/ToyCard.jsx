@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const ToyCard = ({ toy }) => {
     const { _id, name, price, picture_url, available_quantity } = toy;
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div data-aos="zoom-in" className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={picture_url} alt="toy Image" className="rounded-xl h-56" />
             </figure>
