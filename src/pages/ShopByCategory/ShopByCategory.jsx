@@ -13,7 +13,7 @@ const ShopByCategory = () => {
     const resultLanguageToy = catToys.filter(toy => toy.sub_category === "Language Toys")
 
     useEffect(() => {
-        fetch('toysData.json')
+        fetch('http://localhost:5000/alltoys')
             .then(res => res.json())
             .then(data => setCatToys(data))
     }, []);

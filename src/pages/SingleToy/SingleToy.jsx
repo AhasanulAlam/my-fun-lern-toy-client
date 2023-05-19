@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
-const CategoryCard = ({ toy }) => {
 
-    const { _id, name, price, picture_url, available_quantity, seller_name, description } = toy;
+const SingleToy = () => {
+    const toy = useLoaderData();
+    const { _id,  name, price, picture_url, available_quantity, seller_name, description  } = toy;
 
     return (
-        <div className="card card-side bg-base-100 shadow-xl">
+        <div>
+            <h2>This is the detail of the toy: {name}</h2>
+            <div className="card card-side bg-base-100 shadow-xl">
             <div className="flex p-4 ">
-                <figure><img src={picture_url} alt="toy Image" className="rounded-xl w-96" /></figure>
+            <figure><img src={picture_url} alt="toy Image" className="rounded-xl w-96" /></figure>
             </div>
             <div className="card-body">
                 <div className="text-left">
@@ -18,13 +21,12 @@ const CategoryCard = ({ toy }) => {
                     <p className="text-gray-400 mt-2">Details: {description}</p>
                 </div>
                 <div className="card-actions justify-end">
-                    <Link to={`/toy/${_id}`}>
-                        <button className="btn btn-primary">View Details</button>
-                    </Link>
+                    <button className="btn btn-primary">Buy Now</button>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
 
-export default CategoryCard;
+export default SingleToy;
