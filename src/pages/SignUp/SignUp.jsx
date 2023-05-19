@@ -15,7 +15,8 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password);
+        const photo = form.photo.value;
+        console.log(name, email, password, photo);
 
         createUser(email,password)
         .then(result => {
@@ -56,8 +57,13 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" name="password" placeholder="password" className="input input-bordered" />
-                                    
+                                    <input type="password" name="password" placeholder="password" className="input input-bordered" />                                    
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Photo URL</span>
+                                    </label>
+                                    <input type="text" name="photo" placeholder="photo url" className="input input-bordered" />
                                 </div>
                                 <div className="form-control mt-6">
                                     <input className="btn btn-primary" type="submit" value="Sign Up" />
