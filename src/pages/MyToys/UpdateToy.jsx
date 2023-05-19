@@ -7,7 +7,7 @@ const UpdateToy = () => {
 
     const { user } = useContext(AuthContext);
     const toy = useLoaderData();
-    const { _id, picture_url, name, seller_name, seller_email, sub_category, price, rating, available_quantity, created_by, description } = toy;
+    const { _id, picture_url, name, seller_name, seller_email, sub_category, price, rating, available_quantity, description } = toy;
 
     const handleUpdateToy = (event) => {
         event.preventDefault();
@@ -23,7 +23,7 @@ const UpdateToy = () => {
         const created_by = user.email;
         const description = form.description.value;
 
-        const newToy = {
+        const updateToy = {
             picture_url,
             name,
             seller_name,
@@ -36,22 +36,22 @@ const UpdateToy = () => {
             description
         }
 
-        console.log(newToy);
-        fetch('http://localhost:5000/addToy', {
-            method: 'POST',
+        console.log(updateToy);
+        fetch(`http://localhost:5000/mytoys/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newToy)
+            body: JSON.stringify(updateToy)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount) {
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'New Toy has been saved successfully',
+                        title: 'Toy has been updated successfully',
                         showConfirmButton: false,
                         timer: 1500
                     })

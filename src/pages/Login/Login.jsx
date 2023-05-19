@@ -3,28 +3,38 @@ import loginPic from '../../assets/loginPic.json';
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext);
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
 
 
-    const handleLogin = (event) =>{
+    const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
         signIn(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error =>{
-            console.error(error);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
 
-
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
 
     return (
@@ -59,6 +69,10 @@ const Login = () => {
                                 </div>
                             </form>
                             <p className="my-4 tex-center">New to FunLearnToy? <Link className="text-orange-600 font-semibold" to="/signup" >Sign Up</Link> </p>
+                        </div>
+                        <div className="divider"></div>
+                        <div className="flex justify-center items-center my-4">
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success"> <span><FaGoogle className="text-green-400 text-3xl mr-4"> </FaGoogle></span> Google Login</button>
                         </div>
                     </div>
                 </div>
