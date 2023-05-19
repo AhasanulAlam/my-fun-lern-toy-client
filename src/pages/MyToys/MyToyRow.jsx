@@ -1,37 +1,9 @@
-import Swal from 'sweetalert2';
 
-const MyToyRow = ({ myToy }) => {
+
+const MyToyRow = ({ myToy, handleDelete, handleEditToy }) => {
     const { _id, picture_url, name, price, available_quantity } = myToy;
 
-    const handleDelete = (id) => {
-        
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-
-                // delete action
-                fetch(``)
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                })
-
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }
-        })
-
-    }
+    
 
 
     return (
@@ -52,7 +24,7 @@ const MyToyRow = ({ myToy }) => {
             <td> ${price} </td>
             <td>{available_quantity}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <button onClick={() => handleEditToy(_id)} className="btn btn-ghost btn-xs">Edit</button>
             </th>
         </tr>
     );
