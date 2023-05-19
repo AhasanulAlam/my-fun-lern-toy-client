@@ -1,13 +1,30 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaBattleNet } from 'react-icons/fa';
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const NavBar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
     const navItems = <>
         <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'default')}>Home</NavLink></li>
         <li><NavLink to="/alltoys" className={({ isActive }) => (isActive ? 'active' : 'default')}>All Toys</NavLink></li>
-        <li><NavLink to="/mytoys" className={({ isActive }) => (isActive ? 'active' : 'default')}>My Toys</NavLink></li>
-        <li><NavLink to="/addToy" className={({ isActive }) => (isActive ? 'active' : 'default')}>Add A Toys</NavLink></li>
+        {
+            user?.email && <>
+                <li><NavLink to="/mytoys" className={({ isActive }) => (isActive ? 'active' : 'default')}>My Toys</NavLink></li>
+                <li><NavLink to="/addToy" className={({ isActive }) => (isActive ? 'active' : 'default')}>Add A Toys</NavLink></li>
+            </>
+        }
         <li><NavLink to="/blogs" className={({ isActive }) => (isActive ? 'active' : 'default')}>Blogs</NavLink></li>
     </>
     return (
@@ -34,7 +51,10 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-            <Link to='/login'><button className="btn btn-outline btn-info">Login</button></Link>
+                {
+                    user?.email ? <button onClick={handleLogOut} className="btn btn-outline btn-info">Logout</button>
+                        : <Link to='/login'><button className="btn btn-outline btn-info">Login</button></Link>
+                }
             </div>
         </div>
     );
