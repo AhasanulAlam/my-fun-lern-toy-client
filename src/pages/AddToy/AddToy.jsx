@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
@@ -12,9 +13,9 @@ const AddToy = () => {
         const seller_name = form.seller_name.value;
         const seller_email = form.seller_email.value;
         const sub_category = form.sub_category.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const available_quantity = form.available_quantity.value;
+        const price = parseFloat(form.price.value);
+        const rating = parseFloat(form.rating.value);
+        const available_quantity = parseInt(form.available_quantity.value);
         const created_by = user.email;
         const description = form.description.value;
 
@@ -31,12 +32,29 @@ const AddToy = () => {
             description
         }
 
-
-        console.log(picture_url, name, seller_name, seller_email, sub_category,price, rating, available_quantity, created_by, description );
         console.log(newToy);
+        fetch('http://localhost:5000/addToy', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newToy)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'New Toy has been saved successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
 
     }
-
 
     return (
         <div>
@@ -113,12 +131,12 @@ const AddToy = () => {
                                         </div>
                                     </div>
                                 </div>
-                                    <div className="form-control w-full">
-                                        <label className="label">
-                                            <span className="label-text">Toy Details</span>
-                                        </label>
-                                        <textarea name="description" id="description" cols="60" rows="10" className="input input-bordered"></textarea>
-                                    </div>
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Toy Details</span>
+                                    </label>
+                                    <textarea name="description" id="description" cols="60" rows="10" className="input input-bordered"></textarea>
+                                </div>
 
                                 <div className="form-control">
                                     <input type="email" name='created_by' defaultValue={user?.email} placeholder="email_User " className="input input-bordered" hidden />
