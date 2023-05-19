@@ -25,16 +25,12 @@ const MyToys = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
+                            <th>X</th>
                             <th>Photo</th>
                             <th>Toy Name</th>
                             <th>Price</th>
                             <th>Available Quantity</th>
-                            <th></th>
+                            <th>Operation</th>
                         </tr>
                     </thead>
                     <tbody>
