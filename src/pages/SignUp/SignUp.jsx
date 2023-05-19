@@ -3,6 +3,7 @@ import registerPic from '../../assets/registrationPic.json';
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
@@ -22,6 +23,14 @@ const SignUp = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            form.reset();
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'New User created successfully',
+                showConfirmButton: false,
+                timer: 1500
+            })
         })
         .catch(error => {
             console.error(error);

@@ -1,13 +1,18 @@
 import Lottie from "lottie-react";
 import loginPic from '../../assets/loginPic.json';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
     const { signIn, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleLogin = (event) => {
@@ -20,6 +25,15 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                navigate(from);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'User Login successful!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             })
             .catch(error => {
                 console.error(error);
@@ -31,6 +45,14 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Google User Login successful!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             })
             .catch(error => {
                 console.error(error);

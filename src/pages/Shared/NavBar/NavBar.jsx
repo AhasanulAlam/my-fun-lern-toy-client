@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaBattleNet } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const NavBar = () => {
@@ -10,7 +11,15 @@ const NavBar = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => { 
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'User Log Out successful!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
             .catch(error => {
                 console.error(error);
             })
