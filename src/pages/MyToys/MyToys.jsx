@@ -51,26 +51,26 @@ const MyToys = () => {
     }
 
 
-    const handleEditToy = (id) =>{
-        fetch(`http://localhost:5000/mytoys/${id}`,{
-            method: 'PATCH',
-            headers: {
-                'content-type':'application/json'
-            },
-            body: JSON.stringify({status: 'confirm'})
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.modifiedCount > 0){
-                //Update state
-                const remainingToy = myToys.filter(toy => toy._id !== id );
-                const updatedToy = myToys.find(toy => toy._id === id);
-                const newMyToys = [updatedToy, ...remainingToy];
-                setMyToys(newMyToys);
-            }
-        })
-    }
+    // const handleEditToy = (id) =>{
+    //     fetch(`http://localhost:5000/mytoys/${id}`,{
+    //         method: 'PATCH',
+    //         headers: {
+    //             'content-type':'application/json'
+    //         },
+    //         body: JSON.stringify({status: 'confirm'})
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data);
+    //         if(data.modifiedCount > 0){
+    //             //Update state
+    //             const remainingToy = myToys.filter(toy => toy._id !== id );
+    //             const updatedToy = myToys.find(toy => toy._id === id);
+    //             const newMyToys = [updatedToy, ...remainingToy];
+    //             setMyToys(newMyToys);
+    //         }
+    //     })
+    // }
 
     return (
         <div>
@@ -94,7 +94,6 @@ const MyToys = () => {
                             key={myToy._id}
                             myToy={myToy}
                             handleDelete={handleDelete}
-                            handleEditToy={handleEditToy}
                             ></MyToyRow> )
                         }                   
                     </tbody>
