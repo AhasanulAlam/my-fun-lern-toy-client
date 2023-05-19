@@ -30,9 +30,10 @@ const MyToys = () => {
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Photo</th>
+                            <th>Toy Name</th>
+                            <th>Price</th>
+                            <th>Available Quantity</th>
                             <th></th>
                         </tr>
                     </thead>
