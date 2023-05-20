@@ -49,12 +49,12 @@ const router = createBrowserRouter([
         {
           path: 'toy/:id',
           element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+          loader: ({params}) => fetch(`https://my-fun-lern-toy-server.vercel.app/toy/${params.id}`)
         },
         {
           path: 'updatetoy/:id',
           element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/updatetoy/${params.id}`)
+          loader: ({params}) => fetch(`https://my-fun-lern-toy-server.vercel.app/updatetoy/${params.id}`)
         }
       ]
     },

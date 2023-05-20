@@ -1,11 +1,15 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const UpdateToy = () => {
 
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/mytoys';
+
     const toy = useLoaderData();
     const { _id, picture_url, name, seller_name, seller_email, sub_category, price, rating, available_quantity, description } = toy;
 
@@ -35,9 +39,9 @@ const UpdateToy = () => {
             created_by,
             description
         }
+        // console.log(updateToy);
 
-        console.log(updateToy);
-        fetch(`http://localhost:5000/mytoys/${_id}`, {
+        fetch(`https://my-fun-lern-toy-server.vercel.app/mytoys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -48,6 +52,7 @@ const UpdateToy = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount) {
+                    navigate(from, { replace: true });
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
@@ -59,7 +64,6 @@ const UpdateToy = () => {
             })
 
     }
-
 
     return (
         <div>

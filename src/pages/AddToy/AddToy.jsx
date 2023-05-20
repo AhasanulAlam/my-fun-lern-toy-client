@@ -33,7 +33,7 @@ const AddToy = () => {
         }
 
         console.log(newToy);
-        fetch('http://localhost:5000/addToy', {
+        fetch('https://my-fun-lern-toy-server.vercel.app/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

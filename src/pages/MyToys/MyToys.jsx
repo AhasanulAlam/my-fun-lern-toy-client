@@ -7,7 +7,7 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
 
-    const url = `http://localhost:5000/mytoys?created_by=${user?.email}`;
+    const url = `https://my-fun-lern-toy-server.vercel.app/mytoys?created_by=${user?.email}`;
 
     useEffect(() => {
         fetch(url)
@@ -30,7 +30,7 @@ const MyToys = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // delete action
-                fetch(`http://localhost:5000/mytoys/${id}`, {
+                fetch(`https://my-fun-lern-toy-server.vercel.app/mytoys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -52,7 +52,7 @@ const MyToys = () => {
 
     return (
         <div>
-            <h2>This is My Toys: {myToys.length}</h2>
+            <h2 className="text-3xl text-center font-bold text-orange-500 mb-12">Available My Toys: {myToys.length}</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
