@@ -14,6 +14,7 @@ Below are the features implemented in this project:
 * using API route from mongodb
 * implemented index searching on All Toys section by toy name.
 * User can operate all CRUD operation from client with server. 
+* using search by text to find the match toys.
 
 
 * Blog Updated with QnA.
@@ -28,4 +29,4 @@ Below are the features implemented in this project:
 
 * [gitHub client code Link](https://github.com/programming-hero-web-course-4/b7a11-toy-marketplace-client-side-AhasanulAlam) : Github Client link
 
-* [Live web Link](https:) : Live web Link
+* [Live web Link](https://my-fun-learn-toy.web.app/) : Live web Link
