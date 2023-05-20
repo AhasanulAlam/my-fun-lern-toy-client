@@ -5,9 +5,9 @@ const CategoryCard = ({ toy }) => {
     const { _id, name, price, picture_url, available_quantity, description, rating } = toy;
 
     return (
-        <div className="card card-side bg-base-100 shadow-xl">
+        <div className="card card-side bg-base-100 shadow-xl flex flex-col md:flex-row">
             <div className="flex p-4 ">
-                <figure><img src={picture_url} alt="toy Image" className="rounded-xl w-96" /></figure>
+                <figure><img src={picture_url} alt="toy Image" className="rounded-xl md:w-96" /></figure>
             </div>
             <div className="card-body">
                 <div className="text-left">

@@ -1,10 +1,11 @@
 import Lottie from "lottie-react";
 import gamingBannerPuzzle from '../../../assets/48441-puzzzle.json';
+import bannerPic from '../../../assets/yoga-gestures-3d-illustration.jpg';
 
 const Banner = () => {
     return (
         <div className="flex flex-col md:flex-row h-[500px] mb-28">
-            <div className="carousel md:w-1/2 rounded-2xl bg-red-200">
+            <div style={{ backgroundImage: `url(${bannerPic})` }} className="carousel mr-4 md:w-1/2 rounded-2xl">
                 <Lottie animationData={gamingBannerPuzzle} loop={true} />
             </div>
             <div className="carousel md:w-1/2 rounded-2xl">

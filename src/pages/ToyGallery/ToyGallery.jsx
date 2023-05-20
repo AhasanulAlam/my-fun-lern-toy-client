@@ -13,7 +13,7 @@ const ToyGallery = () => {
     return (
         <div>
             <h2 className="text-3xl text-center font-bold text-orange-500 mb-8">Toys Gallery</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-28">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-28 gap-2">
                 {
                     allToys.map(toys => <ToyGalleryCard
                     key={toys._id}

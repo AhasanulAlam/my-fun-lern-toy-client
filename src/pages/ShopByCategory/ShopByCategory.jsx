@@ -19,7 +19,7 @@ const ShopByCategory = () => {
     }, []);
 
     return (
-        <div className='mt-16 mb-32'>
+        <div className='mt-16 mb-32 '>
             <h2 className="text-3xl text-center font-bold text-orange-500 mb-8">Shop By Category</h2>
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList className="text-3xl text-center font-semibold text-gray-400">
