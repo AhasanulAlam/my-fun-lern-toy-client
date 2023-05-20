@@ -1,4 +1,3 @@
-import { FaBattleNet, FaGg, FaHubspot } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
@@ -15,9 +14,9 @@ const FunLearnLab = () => {
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">Math Fun Lab</h2>
-                            <p>Pick from over 1,000 of the latest must haves.</p>
+                            <p>Develop logical and mathematical fun session by NLP trainer.</p>
                             <div className="card-actions">
-                                <button className="btn btn-outline btn-success">View Details</button>
+                                <button className="btn btn-outline btn-secondary">View Details</button>
                             </div>
                         </div>
 
@@ -28,7 +27,10 @@ const FunLearnLab = () => {
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">Science Fun Lab</h2>
-                            <p>Kid-led discovery that builds confidence & sports imagination.</p>
+                            <p>Kid-led discovery that builds confidence & scientific imagination.</p>
+                            <div className="card-actions">
+                                <button className="btn btn-outline btn-secondary">View Details</button>
+                            </div>
                         </div>
                     </div>
                     <div data-aos="fade-down-left" className="card w-96 bg-blue-100 shadow-xl">
@@ -37,7 +39,10 @@ const FunLearnLab = () => {
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">Language Fun Lab</h2>
-                            <p>Return any unloved toy and swap it for something else.</p>
+                            <p>Develop effective communication fun session by NLP trainer.</p>
+                            <div className="card-actions">
+                                <button className="btn btn-outline btn-secondary">View Details</button>
+                            </div>
                         </div>
                     </div>
                 </div>
