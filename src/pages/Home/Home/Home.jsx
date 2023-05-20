@@ -1,3 +1,4 @@
+import FunLearnLab from "../../FunLearnLab/FunLearnLab";
 import HowToBuy from "../../HowToBuy/HowToBuy";
 import ShopByCategory from "../../ShopByCategory/ShopByCategory";
 import ToyGallery from "../../ToyGallery/ToyGallery";
@@ -11,6 +12,7 @@ const Home = () => {
             <HowToBuy></HowToBuy>
             <ShopByCategory></ShopByCategory>
             <ToyGallery></ToyGallery>
+            <FunLearnLab></FunLearnLab>
         </div>
     );
 };
