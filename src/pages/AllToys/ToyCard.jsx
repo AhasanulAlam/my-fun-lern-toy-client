@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 const ToyCard = ({ toy }) => {
-    const { _id, name, price, picture_url, available_quantity } = toy;
+    const { _id, name, price, picture_url, available_quantity } = toy || {};
     return (
         <div data-aos="zoom-in" className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">

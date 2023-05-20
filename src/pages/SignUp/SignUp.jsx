@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 
 const SignUp = () => {
@@ -24,6 +25,7 @@ const SignUp = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            updateUserProfileData(user, name, photo);
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -36,6 +38,15 @@ const SignUp = () => {
             console.error(error);
         })
 
+    }
+
+    const updateUserProfileData = (user, name, photo) =>{
+        updateProfile(user, {
+            displayName: name,
+            photoURL: photo
+        })
+        .then(()=>{})
+        .catch(error => console.error(error))
     }
 
     return (
