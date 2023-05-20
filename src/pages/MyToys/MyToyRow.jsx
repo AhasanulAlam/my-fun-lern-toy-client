@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 const MyToyRow = ({ myToy, handleDelete }) => {
     const { _id, picture_url, name, price, available_quantity } = myToy;
 
-
-
-
     return (
         <tr>
             <th>
@@ -26,7 +23,7 @@ const MyToyRow = ({ myToy, handleDelete }) => {
             <td>{available_quantity}</td>
             <th>
                 <Link to={`/updatetoy/${_id}`}>
-                    <button className="btn btn-ghost btn-xs">Edit</button>
+                    <button className="btn btn-outline btn-warning">Edit</button>
                 </Link>
             </th>
         </tr>

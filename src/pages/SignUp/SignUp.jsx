@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import registerPic from '../../assets/registrationPic.json';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -10,6 +10,11 @@ import { updateProfile } from "firebase/auth";
 const SignUp = () => {
 
     const {createUser} = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSignUp = (event) =>{
         event.preventDefault();
@@ -26,6 +31,7 @@ const SignUp = () => {
             console.log(user);
             form.reset();
             updateUserProfileData(user, name, photo);
+            navigate(from, { replace: true });
             Swal.fire({
                 position: 'center',
                 icon: 'success',

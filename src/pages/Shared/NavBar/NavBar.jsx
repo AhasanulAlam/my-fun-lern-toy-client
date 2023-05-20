@@ -11,7 +11,7 @@ const NavBar = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { 
+            .then(() => {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -61,7 +61,14 @@ const NavBar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user?.email ? <button onClick={handleLogOut} className="btn btn-outline btn-info">Logout</button>
+                    user?.email ?
+                        <>
+                            <div className="w-12 rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
+                                <img className="w-12 rounded-full" src={user.photoURL} alt='Profile' title={user.displayName} />
+                            </div>
+                            <button onClick={handleLogOut} className="ml-4 btn btn-outline btn-info">Logout</button>
+                        </>
+
                         : <Link to='/login'><button className="btn btn-outline btn-info">Login</button></Link>
                 }
             </div>
