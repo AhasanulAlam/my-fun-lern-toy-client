@@ -25,8 +25,8 @@ Below are the features implemented in this project:
 
 ## Useful Links
 
-* [gitHub server code Link](https://github.com/programming-hero-web-course-4/b7a11-toy-marketplace-server-side-AhasanulAlam) : Github Server link
+* [gitHub server code Link](https://github.com/AhasanulAlam/my-fun-lern-toy-server) : Github Server link
 
-* [gitHub client code Link](https://github.com/programming-hero-web-course-4/b7a11-toy-marketplace-client-side-AhasanulAlam) : Github Client link
+* [gitHub client code Link](https://github.com/AhasanulAlam/my-fun-lern-toy-client) : Github Client link
 
 * [Live web Link](https://my-fun-learn-toy.web.app/) : Live web Link
